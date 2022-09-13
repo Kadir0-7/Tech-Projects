@@ -19,7 +19,7 @@ section {
 }
 
 footer {
-  background-color: rgba(37, 54, 141, 0.897);
+  background-color: #1c1d25;
   color: white;
   text-align: center;
   padding: 80px;
@@ -139,6 +139,9 @@ p {
   flex-direction: column;
   text-align: center;
   padding: 80px;
+}
+.about-me{
+  text-align: center;
 }
 
 .headshot {
