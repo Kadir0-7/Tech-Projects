@@ -1,15 +1,18 @@
 
 import { store } from './state.js';
 
+
+// Creating Custom Component
 class Movie extends HTMLElement {
   constructor() {
     super();
+    //open shadowDom
     const shadow = this.attachShadow({ mode: 'open' });
     const template = document
       .querySelector('#movie-template')
       .content.cloneNode(true);
     shadow.append(template);
-
+// setting the attributes to the shadowdoms selected places 
     this._poster = this.shadowRoot.querySelector('.movie--poster');
     this._title = this.shadowRoot.querySelector('.movie--title');
     this._year = this.shadowRoot.querySelector('.movie--year');
@@ -24,12 +27,12 @@ class Movie extends HTMLElement {
   }
   attributeChangedCallback(name, oldValue, newValue) {
     if (oldValue === newValue) return;
-
+//setting the poster 
     if (name === 'poster') {
       this._poster.src = newValue;
       this._poster.alt = `Poster for ${this.title}`;
     }
-
+//setting title -- if name is strictly equal to title title content equals the new value
     if (name === 'title') {
       this._title.textContent = newValue;
     }
